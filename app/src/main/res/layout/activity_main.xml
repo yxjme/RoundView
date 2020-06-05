@@ -4,21 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical">
 
-    <com.flyco.roundview.RoundFrameLayout
-        android:id = "@+id/mRoundFrameLayout"
-        android:layout_width="wrap_content"
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tl_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </com.flyco.roundview.RoundFrameLayout>
+        android:background="#666666"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        app:tl_indicator_gravity="BOTTOM"
+        app:tl_textBold="BOTH"
+        app:tl_textsize="16dp"
+        app:tl_textAllCaps="true"
+        app:tl_indicator_width_equal_title="true"
+        app:tl_underline_color="#1A000000"
+        app:tl_underline_gravity="BOTTOM"
+        app:tl_underline_height="1dp"/>
 
+    <com.gigamole.navigationtabstrip.NavigationTabStrip
+        android:id="@+id/mNavigationTabStrip"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:nts_color="#000"
+        app:nts_size="15sp"
+        app:nts_weight="3dp"
+        app:nts_factor="1.5"
+        app:nts_type="line"
+        app:nts_gravity="bottom"
+        app:nts_typeface="fonts/typeface.otf"
+        app:nts_corners_radius="1.5dp"
+        app:nts_animation_duration="300"
+        app:nts_active_color="#000"
+        app:nts_inactive_color="#c4c4c4"
+        app:nts_titles="@null" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@android:color/transparent"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabIndicatorFullWidth="false"
+        app:tabTextColor="#000"
+        app:tabMinWidth="30dp"
+        app:tabSelectedTextColor="@color/colorPrimaryDark"
+        app:tabIndicatorColor="@android:color/holo_red_dark"
+        app:tabMode="scrollable"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#000"
+        android:alpha="0.3"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

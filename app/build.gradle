@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 29
@@ -21,6 +22,11 @@ android {
         }
     }
 
+
+    greendao {
+        schemaVersion 1 //当前数据库版本
+    }
+
 }
 
 dependencies {
@@ -32,4 +38,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':RoundViewLibrary')
+
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'// 添加库
+    implementation 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
+    implementation 'com.github.yxjme:TabLayoutLib:1.0'
+
 }
